@@ -1,3 +1,4 @@
+
 //Pedro and Tito's project
 import java.util.*;
 import java.io.*;
@@ -5,29 +6,67 @@ import java.io.*;
 public class App {
 
     public static void main(String[] args) {
+
         Scanner keyboard = new Scanner(System.in);
 
-        //Declaring the userNumber variable that will hold users choice
-        int userNumber = 0;
+        //accept menu method
+        int userSelect;
+        do{
+            //accessing the menu in this switch statement
+            userSelect = menu();
 
-        while(userNumber != 6) {
+            //each case is equlivent to each number choice in the menu
+            switch(userSelect) {
+               case 1:
+               //these are just place holders to see if the progam runs or not when the option is picked 
+               System.out.println("Option 1 is Selected. ");
+               break;
 
-            //Asking user to choose an option to begin program.
-            System.out.println("\n Hello, welcome to CS Bank and Trust. \n\n Please choose an option.");
-            System.out.println("1 - Open Account\n2 - List Accounts\n3 - Deposit Funds\n4 - Withdraw funds\n5 - Close an account\n6 - Exit\n");
-            System.out.println("Please enter your choice: ");
-            userNumber = keyboard.nextInt();
+               case 2:
+               System.out.println("Option 2 is Selected. ");
+               break;
 
-            //Error checking incase user uses invalid numbers.
-            while(userNumber < 1 || userNumber > 6) {
-                System.out.println("Please use a valid number 1-6: ");
-                userNumber = keyboard.nextInt();
+               case 3:
+               System.out.println("Option 3 is Selected. ");
+               break;
+
+               case 4:
+               System.out.println("Option 4 is Selected. ");
+               break; 
+
+               case 5:
+               System.out.println("Option 5 is Selected. ");
+               break;
+
+               case 6:
+               System.exit(0);
+               break;
+
+               default:
+               break;
             }
 
-            //Begin using if - else statements in order to gain functionality.
+        //Error checking incase user uses invalid numbers.
+        } while(userSelect < 1 || userSelect > 6);
 
-        }
+     }
 
-    }
+     public static int menu() {
+        int selection;
+        Scanner input = new Scanner(System.in);
 
+        //A list of options for the user
+        System.out.println("1 - Open Account");
+        System.out.println("2 - List Accounts");
+        System.out.println("3 - Deposit funds");
+        System.out.println("4 - Withdraw funds");
+        System.out.println("5 - Close an account");
+        System.out.println("6 - Exit");
+
+        //Asking user to pick an option to start the program
+        System.out.print("\nHello, welcome to CS Bank and Trust. \nPlease enter your choice: ");
+        selection = input.nextInt();
+        return selection;
+       
+     }
 }
