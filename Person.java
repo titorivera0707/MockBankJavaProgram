@@ -1,4 +1,4 @@
-public class Account {
+public class Person {
     
     private String FirstName;
     private String LastName;
