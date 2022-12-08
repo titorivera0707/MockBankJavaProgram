@@ -2,6 +2,7 @@
 
 public class Account {
 
+    //Declaring all private variables for this class only.
     private int accountNumber;
     private static int accountCounter = 1000;
     private double balance;
@@ -38,6 +39,7 @@ public class Account {
         this.accountStatus = accountStatus;
     }
 
+    //Converting the entire account information to string format.
     public String toString() {
         return " : " + accountNumber + " : " + balance + " : " + accountStatus;
     }

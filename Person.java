@@ -1,6 +1,6 @@
 public class Person {
     
-    //Declaring all variables as private.
+    //Declaring all variables as private for this class only.
     private String firstName;
     private String lastName;
     private String emailAddress;
@@ -46,7 +46,7 @@ public class Person {
         return socialSecurityNumber;
     }
 
-    //Returning variables when called.
+    //Returning variables when called as a string.
     public String toString() {
         return " : " + firstName+ " : "+ lastName+ " : " +socialSecurityNumber;
     }
