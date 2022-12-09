@@ -18,9 +18,20 @@ public class App {
             //each case is equlivent to each number choice in the menu
             switch(userSelect) {
                case 1:
-               //these are just place holders to see if the progam runs or not when the option is picked 
-               System.out.println("Option 1 is Selected. ");
+               System.out.print("Enter first name: ");
+               String firstName = keyboard.nextLine();
+
+               System.out.print("Enter last name: ");
+               String lastName = keyboard.nextLine();
+
+               System.out.print("Enter Social security number: ");
+               String socialSecurityNumber = keyboard.nextLine();
+
+               System.out.println("Account Name: ");
+               String accountName = keyboard.nextLine();
+
                break;
+
 
                case 2:
                System.out.println("Option 2 is Selected. ");
