@@ -3,28 +3,12 @@
 public class Account {
 
     //Declaring all private variables for this class only.
-    private int accountNumber;
-    private static int accountCounter = 1000;
     private double balance;
     private String accountStatus;
 
     public Account(int accountNumber, double balance, String accountStatus) {
-        this.accountNumber = accountCounter++;
         this.balance = balance;
         this.accountStatus = accountStatus;
-    }
-
-    public int getAccountNumber() {
-        return accountNumber;
-    }
-    public void setAccountNumber(int accountNumber) {
-        this.accountNumber = accountNumber;
-    }
-    public static int getAccountCounter() {
-        return accountCounter;
-    }
-    public static void setAccountCounter(int accountCounter) {
-        Account.accountCounter = accountCounter;
     }
     public double getBalance() {
         return balance;
@@ -41,7 +25,7 @@ public class Account {
 
     //Converting the entire account information to string format.
     public String toString() {
-        return " : " + accountNumber + " : " + balance + " : " + accountStatus;
+        return " : " + balance + " : " + accountStatus;
     }
 
 }
