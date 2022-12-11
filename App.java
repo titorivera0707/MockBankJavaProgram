@@ -18,23 +18,27 @@ public class App {
             //each case is equlivent to each number choice in the menu
             switch(userSelect) {
                case 1:
-               System.out.print("Enter first name: ");
-               String firstName = keyboard.nextLine();
+               Person person = new Person(null, null, null, null, null);
+               System.out.print("\nEnter first name: ");
+               person.setFirstName(keyboard.nextLine());
 
                System.out.print("Enter last name: ");
-               String lastName = keyboard.nextLine();
+               person.setLastName(keyboard.nextLine());
 
                System.out.print("Enter Social security number: ");
-               String socialSecurityNumber = keyboard.nextLine();
+               person.setSSN(keyboard.nextLine());
 
-               System.out.println("Account Name: ");
-               String accountName = keyboard.nextLine();
+               System.out.print("Account Name: ");
+               person.setAccountName(keyboard.nextLine());
 
-               break;
+               Interface in = Bank.bankInterface(person, null);
 
+               System.out.println("Thank you, the account number is: " +in.getAccountNumber()+".\n");
+               menu();
+               
 
                case 2:
-               System.out.println("Option 2 is Selected. ");
+               System.out.println(Bank.getAll());
                break;
 
                case 3:
