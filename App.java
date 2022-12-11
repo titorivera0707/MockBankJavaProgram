@@ -42,16 +42,19 @@ public class App {
                break;
 
                case 3:
-               System.out.println("Option 3 is Selected. ");
-               break;
+               System.out.println("\nOption 3 is Selected. \n");
+               menu();
+               
 
                case 4:
-               System.out.println("Option 4 is Selected. ");
-               break; 
+               System.out.println("\nOption 4 is Selected. \n");
+               menu();
+               
 
                case 5:
-               System.out.println("Option 5 is Selected. ");
-               break;
+               System.out.println("\nOption 5 is Selected. \n");
+               menu();
+               
 
                case 6:
                System.exit(0);
