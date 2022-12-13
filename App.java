@@ -19,6 +19,7 @@ public class App {
             switch(userSelect) {
                case 1:
                Person person = new Person(null, null, null, null, null);
+               Account newAccount = new Account(0, null);
                System.out.print("\nEnter first name: ");
                person.setFirstName(keyboard.nextLine());
 
@@ -31,7 +32,9 @@ public class App {
                System.out.print("Account Name: ");
                person.setAccountName(keyboard.nextLine());
 
-               Interface in = Bank.bankInterface(person, null);
+               newAccount.setAccountStatus("Open");
+
+               Interface in = Bank.bankInterface(person, newAccount);
 
                System.out.println("Thank you, the account number is: " +in.getAccountNumber()+".\n");
                menu();
