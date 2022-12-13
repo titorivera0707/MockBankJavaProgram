@@ -15,11 +15,16 @@ public class App {
             //accessing the menu in this switch statement
             userSelect = menu();
 
+            Person person = new Person(null, null, null, null, null);
+            Account newAccount = new Account(0, null);
+            Interface in = Bank.bankInterface(person, newAccount);
+
+
             //each case is equlivent to each number choice in the menu
             switch(userSelect) {
                case 1:
-               Person person = new Person(null, null, null, null, null);
-               Account newAccount = new Account(0, null);
+               //Person person = new Person(null, null, null, null, null);
+               //Account newAccount = new Account(0, null);
                System.out.print("\nEnter first name: ");
                person.setFirstName(keyboard.nextLine());
 
@@ -34,7 +39,7 @@ public class App {
 
                newAccount.setAccountStatus("Open");
 
-               Interface in = Bank.bankInterface(person, newAccount);
+               //Interface in = Bank.bankInterface(person, newAccount);
 
                System.out.println("Thank you, the account number is: " +in.getAccountNumber()+".\n");
                menu();
@@ -50,7 +55,7 @@ public class App {
 
                System.out.print("Enter the amount to deposit: ");
                int deposit = keyboard.nextInt();
-               deposit += (newAccount.getBalance());
+              // deposit += (newAccount.getBalance());
 
                if(Bank.find(searchString) == null) {
                   System.out.print("Account not found ");
@@ -63,13 +68,13 @@ public class App {
                
 
                case 4:
-               
+
                System.out.print("\nEnter account number: ");
                int accountNum = keyboard.nextInt();
 
                System.out.print("Enter the amount to withdarw: ");
                int Withdraw = keyboard.nextInt();
-               Withdraw -= (newAccount.getBalance());
+               //Withdraw -= (newAccount.getBalance());
 
                if(Bank.find(accountNum) == null) {
                   System.out.print("Account not found ");
@@ -82,7 +87,6 @@ public class App {
                
 
                case 5:
-               System.out.println("\nOption 5 is Selected. \n");
                menu();
                
 
