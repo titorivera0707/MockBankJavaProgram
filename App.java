@@ -39,18 +39,45 @@ public class App {
                System.out.println("Thank you, the account number is: " +in.getAccountNumber()+".\n");
                menu();
                
-
                case 2:
                System.out.println(Bank.getAll());
-               break;
-
+               menu();
+               
                case 3:
-               System.out.println("\nOption 3 is Selected. \n");
+               
+               System.out.print("\nEnter account number: ");
+               int searchString = keyboard.nextInt();
+
+               System.out.print("Enter the amount to deposit: ");
+               int deposit = keyboard.nextInt();
+               deposit += (newAccount.getBalance());
+
+               if(Bank.find(searchString) == null) {
+                  System.out.print("Account not found ");
+               }
+               else{
+               Bank.find(searchString);
+               System.out.print("Deposit successful, the new balance is: ");
+               }
                menu();
                
 
                case 4:
-               System.out.println("\nOption 4 is Selected. \n");
+               
+               System.out.print("\nEnter account number: ");
+               int accountNum = keyboard.nextInt();
+
+               System.out.print("Enter the amount to withdarw: ");
+               int Withdraw = keyboard.nextInt();
+               Withdraw -= (newAccount.getBalance());
+
+               if(Bank.find(accountNum) == null) {
+                  System.out.print("Account not found ");
+               }
+               else{
+               Bank.find(accountNum);
+               System.out.print("Withdraw successful, the new balance is: ");
+               }
                menu();
                
 
