@@ -87,8 +87,16 @@ public class App {
                
 
                case 5:
+               System.out.print("\nEnter account number to close: ");
+               int accNumber = keyboard.nextInt();
+
+               if(Bank.find(accNumber) == null) {
+                  System.out.println("Account not found");
+               }
+               else {
+                  System.out.println("Account closed, current balance is "+in.getBankAccount().getBalance()+" deposits are no longer possible");
+               }
                menu();
-               
 
                case 6:
                System.exit(0);
