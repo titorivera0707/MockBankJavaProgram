@@ -3,17 +3,17 @@
 public class Account {
 
     //Declaring all private variables for this class only.
-    private double balance;
+    private int balance;
     private String accountStatus;
 
-    public Account(double balance, String accountStatus) {
+    public Account(int balance, String accountStatus) {
         this.balance = balance;
         this.accountStatus = accountStatus;
     }
-    public double getBalance() {
+    public int getBalance() {
         return balance;
     }
-    public void setBalance(double balance) {
+    public void setBalance(int balance) {
         this.balance = balance;
     }
     public String getAccountStatus() {
