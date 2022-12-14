@@ -85,7 +85,14 @@ public class App {
 
                System.out.print("Enter the amount to withdraw: ");
                int Withdraw = keyboard.nextInt();
-               Bank.withd(accountNum, Withdraw);
+
+               if (Bank.find(accountNum) < Withdraw) {
+                  System.out.println("You can't withdraw more than you have. Try again.");
+                  break;
+               }
+               else{
+                  Bank.withd(accountNum, Withdraw);
+               }
 
                if(Bank.find(accountNum)==0) {
                   System.out.print("Account not found ");
@@ -97,13 +104,18 @@ public class App {
                break;
                
                case 5:
+               Account newNewAccount = new Account(0, "Open");
                System.out.print("\nEnter account number to close: ");
                int accNumber = keyboard.nextInt();
 
-               if(Bank.find(accNumber) == 0l) {
+               String newValue = Bank.search(accNumber);
+
+               if(Bank.search(accNumber) == null) {
                   System.out.println("Account not found");
                }
+               else if(Bank.search(accNumber) == "Closed") System.out.println("Account already closed.");
                else {
+                  newNewAccount.setAccountStatus(newValue);
                   System.out.println("Account closed, current balance is "+Bank.find(accNumber)+" deposits are no longer possible");
                }
                break;

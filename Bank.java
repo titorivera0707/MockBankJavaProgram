@@ -52,6 +52,17 @@ public class Bank {
         }
     }
 
+    public static String search(int accountNum) {
+
+        for(Interface r: inter) {
+            if(accountNum == r.getAccountNumber()) return "Closed";
+            
+        }
+
+        return null;
+
+    }
+
     //used in order to find a specific account using the account number.
     public static int find(int accountNum) {
 
