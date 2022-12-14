@@ -32,7 +32,6 @@ public class App {
             Account newAccount = new Account(0, "Open");
             Interface in = Bank.bankInterface(person, newAccount);
 
-
             //each case is equlivent to each number choice in the menu
             switch(userSelect) {
                case 1:
@@ -67,14 +66,15 @@ public class App {
                int searchString = keyboard.nextInt();
 
                System.out.print("Enter the amount to deposit: ");
-               newAccount.setBalance(keyboard.nextInt() + newAccount.getBalance());
+               int newDep = keyboard.nextInt();
+               Bank.depos(searchString, newDep);
 
-               if(Bank.find(searchString) == null) {
+               if(Bank.find(searchString) == 0) {
                   System.out.print("Account not found ");
                }
                else{
                Bank.find(searchString);
-               System.out.print("Deposit successful, the new balance is: ");
+               System.out.print("Deposit successful, the new balance is: " + Bank.find(searchString) + "\n");
                }
                break;
                
@@ -86,27 +86,26 @@ public class App {
 
                System.out.print("Enter the amount to withdraw: ");
                int Withdraw = keyboard.nextInt();
-               //Withdraw -= (newAccount.getBalance());
+               Bank.withd(accountNum, Withdraw);
 
-               if(Bank.find(accountNum) == null) {
+               if(Bank.find(accountNum)==0) {
                   System.out.print("Account not found ");
                }
                else{
                Bank.find(accountNum);
-               System.out.print("Withdraw successful, the new balance is: $" + newAccount.getBalance());
+               System.out.print("Withdraw successful, the new balance is: $" + Bank.find(accountNum) + "\n");
                }
                break;
                
-
                case 5:
                System.out.print("\nEnter account number to close: ");
                int accNumber = keyboard.nextInt();
 
-               if(Bank.find(accNumber) == null) {
+               if(Bank.find(accNumber) == 0l) {
                   System.out.println("Account not found");
                }
                else {
-                  System.out.println("Account closed, current balance is "+in.getBankAccount().getBalance()+" deposits are no longer possible");
+                  System.out.println("Account closed, current balance is "+in.getBalance()+" deposits are no longer possible");
                }
                break;
 

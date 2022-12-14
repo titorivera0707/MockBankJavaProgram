@@ -7,10 +7,12 @@ public class Interface {
     private static int accountCounter = 1000;
     private Person accHolder;
     private Account bankAccount;
+    private int balance;
 
     public Interface(Person accHolder, Account bankAccount){
 
         super();
+        this.balance = balance;
         this.accountNumber = accountCounter++;
         this.accHolder = accHolder;
         this.bankAccount = bankAccount;
@@ -18,6 +20,12 @@ public class Interface {
     }
 
     //Setting getters and setters.
+    public int getBalance() {
+        return balance;
+    }
+    public void setBalance(int balance) {
+        this.balance = balance;
+    }
     public int getAccountNumber() {
         return accountNumber;
     }
@@ -46,7 +54,7 @@ public class Interface {
     //Creates a string to call whenever full account information is requested.
     public String toString() {
 
-        return getAccountNumber() + " " + accHolder.toString() + " : " + bankAccount.getBalance() + " : Account" + bankAccount.getAccountStatus().toString();
+        return getAccountNumber() + " " + accHolder.toString() + " : " + getBalance() + " : Account - " + bankAccount.getAccountStatus().toString();
 
     }
 
