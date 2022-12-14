@@ -28,13 +28,12 @@ public class App {
             System.out.print("\nHello, welcome to CS Bank and Trust. \nPlease enter your choice: ");
             userSelect = input.nextInt();
 
-            Person person = new Person(null, null, null, null, null);
-            Account newAccount = new Account(0, "Open");
-            Interface in = Bank.bankInterface(person, newAccount);
-
             //each case is equlivent to each number choice in the menu
             switch(userSelect) {
                case 1:
+               Person person = new Person(null, null, null, null, null);
+               Account newAccount = new Account(0, "Open");
+               Interface in = Bank.bankInterface(person, newAccount);
                //Person person = new Person(null, null, null, null, null);
                //Account newAccount = new Account(0, null);
                System.out.print("\nEnter first name: ");
@@ -105,7 +104,7 @@ public class App {
                   System.out.println("Account not found");
                }
                else {
-                  System.out.println("Account closed, current balance is "+in.getBalance()+" deposits are no longer possible");
+                  System.out.println("Account closed, current balance is "+Bank.find(accNumber)+" deposits are no longer possible");
                }
                break;
 
