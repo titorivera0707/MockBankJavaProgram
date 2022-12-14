@@ -13,10 +13,23 @@ public class App {
         int userSelect;
         do{
             //accessing the menu in this switch statement
-            userSelect = menu();
+
+            Scanner input = new Scanner(System.in);
+
+            //A list of options for the user
+            System.out.println("1 - Open Account");
+            System.out.println("2 - List Accounts");
+            System.out.println("3 - Deposit funds");
+            System.out.println("4 - Withdraw funds");
+            System.out.println("5 - Close an account");
+            System.out.println("6 - Exit");
+
+            //Asking user to pick an option to start the program
+            System.out.print("\nHello, welcome to CS Bank and Trust. \nPlease enter your choice: ");
+            userSelect = input.nextInt();
 
             Person person = new Person(null, null, null, null, null);
-            Account newAccount = new Account(0, null);
+            Account newAccount = new Account(0, "Open");
             Interface in = Bank.bankInterface(person, newAccount);
 
 
@@ -42,11 +55,11 @@ public class App {
                //Interface in = Bank.bankInterface(person, newAccount);
 
                System.out.println("Thank you, the account number is: " +in.getAccountNumber()+".\n");
-               menu();
+               break;
                
                case 2:
                System.out.println(Bank.getAll());
-               menu();
+               break;
                
                case 3:
                
@@ -54,8 +67,7 @@ public class App {
                int searchString = keyboard.nextInt();
 
                System.out.print("Enter the amount to deposit: ");
-               int deposit = keyboard.nextInt();
-              // deposit += (newAccount.getBalance());
+               newAccount.setBalance(keyboard.nextInt() + newAccount.getBalance());
 
                if(Bank.find(searchString) == null) {
                   System.out.print("Account not found ");
@@ -64,7 +76,7 @@ public class App {
                Bank.find(searchString);
                System.out.print("Deposit successful, the new balance is: ");
                }
-               menu();
+               break;
                
 
                case 4:
@@ -72,7 +84,7 @@ public class App {
                System.out.print("\nEnter account number: ");
                int accountNum = keyboard.nextInt();
 
-               System.out.print("Enter the amount to withdarw: ");
+               System.out.print("Enter the amount to withdraw: ");
                int Withdraw = keyboard.nextInt();
                //Withdraw -= (newAccount.getBalance());
 
@@ -81,9 +93,9 @@ public class App {
                }
                else{
                Bank.find(accountNum);
-               System.out.print("Withdraw successful, the new balance is: ");
+               System.out.print("Withdraw successful, the new balance is: $" + newAccount.getBalance());
                }
-               menu();
+               break;
                
 
                case 5:
@@ -96,7 +108,7 @@ public class App {
                else {
                   System.out.println("Account closed, current balance is "+in.getBankAccount().getBalance()+" deposits are no longer possible");
                }
-               menu();
+               break;
 
                case 6:
                System.exit(0);
@@ -107,26 +119,8 @@ public class App {
             }
 
         //Error checking incase user uses invalid numbers.
-        } while(userSelect < 1 || userSelect > 6);
+        } while(userSelect > 0 && userSelect < 7);
 
      }
 
-     public static int menu() {
-        int selection;
-        Scanner input = new Scanner(System.in);
-
-        //A list of options for the user
-        System.out.println("1 - Open Account");
-        System.out.println("2 - List Accounts");
-        System.out.println("3 - Deposit funds");
-        System.out.println("4 - Withdraw funds");
-        System.out.println("5 - Close an account");
-        System.out.println("6 - Exit");
-
-        //Asking user to pick an option to start the program
-        System.out.print("\nHello, welcome to CS Bank and Trust. \nPlease enter your choice: ");
-        selection = input.nextInt();
-        return selection;
-       
-     }
 }
