@@ -32,7 +32,7 @@ public class App {
           switch(userSelect) {
              case 1:
              Person person = new Person(null, null, null, null, null);
-             Account newAccount = new Account(0, "Open");
+             Account newAccount = new Account(0.0, "Open");
              Interface in = Bank.bankInterface(person, newAccount);
              System.out.print("\nEnter first name: ");
              person.setFirstName(keyboard.nextLine());
@@ -62,7 +62,7 @@ public class App {
              int searchString = keyboard.nextInt();
 
              System.out.print("Enter the amount to deposit: ");
-             int newDep = keyboard.nextInt();
+             double newDep = keyboard.nextDouble();
              Bank.depos(searchString, newDep);
 
              if(Bank.find(searchString) == 0) {
@@ -81,7 +81,7 @@ public class App {
              int accountNum = keyboard.nextInt();
 
              System.out.print("Enter the amount to withdraw: ");
-             int Withdraw = keyboard.nextInt();
+             double Withdraw = keyboard.nextDouble();
 
              if (Bank.find(accountNum) < Withdraw) {
                 System.out.println("You can't withdraw more than you have. Try again.");
@@ -101,7 +101,7 @@ public class App {
              break;
              
              case 5:
-             Account newNewAccount = new Account(0, "Open");
+             Account newNewAccount = new Account(0.0, "Open");
                System.out.print("\nEnter account number to close: ");
                int accNumber = keyboard.nextInt();
 
