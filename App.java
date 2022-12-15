@@ -108,15 +108,9 @@ public class App {
                }
                else{
                   Bank.withd(accountNum, Withdraw);
+                  System.out.print("Withdraw successful, the new balance is: $" + Bank.find(accountNum) + "\n");
                }
 
-               if(Bank.find(accountNum)==0) {
-                  System.out.print("Account not found ");
-               }
-               else{
-               Bank.find(accountNum);
-               System.out.print("Withdraw successful, the new balance is: $" + Bank.find(accountNum) + "\n");
-               }
                break;
                
                //Asks user which account they would like to close using the account number.
@@ -128,7 +122,7 @@ public class App {
                   System.out.println("Account not found");
                   break;
                }
-               else if(Bank.getStat(accNumber).equalsIgnoreCase("Closed"));
+               else if(Bank.getStat(accNumber).equalsIgnoreCase("Closed")) System.out.println("Account already closed. Try again.");
                else{
                   Bank.setStat(accNumber, "Closed");
                   System.out.println("Account closed, current balance is "+Bank.find(accNumber)+". Deposits are no longer possible");
