@@ -50,8 +50,6 @@ public class App {
 
                newAccount.setAccountStatus("Open");
 
-               //Interface in = Bank.bankInterface(person, newAccount);
-
                System.out.println("Thank you, the account number is: " +in.getAccountNumber()+".\n");
                break;
                
@@ -77,7 +75,7 @@ public class App {
 
 
                System.out.print("Enter the amount to deposit: ");
-               int newDep = keyboard.nextInt();
+               double newDep = keyboard.nextDouble();
                Bank.depos(searchString, newDep);
                Bank.find(searchString);
                System.out.print("Deposit successful, the new balance is: " + Bank.find(searchString) + "\n");
@@ -96,7 +94,7 @@ public class App {
                }
 
                System.out.print("Enter the amount to withdraw: ");
-               int Withdraw = keyboard.nextInt();
+               double Withdraw = keyboard.nextDouble();
 
                if (Bank.find(accountNum) < Withdraw) {
                   System.out.println("You can't withdraw more than you have. Try again.");
