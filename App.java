@@ -141,5 +141,6 @@ public class App {
 
         //Error checking incase user uses invalid numbers.
       } while(userSelect > 0 && userSelect < 7);
+      if(userSelect <1 || userSelect > 6) System.out.println("Number Invalid. Please try again.");
    }
 }
