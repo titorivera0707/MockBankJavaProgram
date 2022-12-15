@@ -59,7 +59,7 @@ public class Person {
  
      //Returning variables when called as a string.
      public String toString() {
-         return " : " + firstName+ " : "+ lastName+ " : " +SSN+ " : " +accountName;
+         return "(" + accountName +") : " + firstName+ " : "+ lastName+ " : " + SSN;
      }
 
     

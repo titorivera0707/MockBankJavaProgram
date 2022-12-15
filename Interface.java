@@ -1,8 +1,6 @@
-
-
 public class Interface {
-
-    //Creating variables for the classes that have been created.
+      
+       //Creating variables for the classes that have been created.
     private int accountNumber;
     private static int accountCounter = 1000;
     private Person accHolder;
@@ -54,8 +52,9 @@ public class Interface {
     //Creates a string to call whenever full account information is requested.
     public String toString() {
 
-        return getAccountNumber() + " " + accHolder.toString() + " : " + getBalance() + " : Account - " + bankAccount.getAccountStatus().toString();
+        return "\n"+getAccountNumber() + "" + accHolder.toString() + " : " + getBalance() + " : Account - " + bankAccount.getAccountStatus().toString()+" "; 
+        
 
     }
-
+  
 }
