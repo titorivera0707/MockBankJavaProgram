@@ -2,9 +2,10 @@ import java.util.*;
 import java.io.*;
 
 public class Bank {
+     
 
     //Creating an ArrayList in order to be able to display all bank accounts.
-    Account newAcc = new Account(0, "Open");
+    Account newAcc = new Account(0.0, "Open");
     private static ArrayList<Interface> inter = new ArrayList<Interface>(); 
 
     //Used in order to add new items into the ArrayList every time something is pushed.
@@ -17,7 +18,7 @@ public class Bank {
 
     }
 
-    public static Interface depos (int accountNum, int newBalance) {
+    public static Interface depos (int accountNum, double newBalance) {
 
         for (Interface in: inter) {
             if(in.getAccountNumber() == accountNum) {
@@ -31,7 +32,7 @@ public class Bank {
 
     }
 
-    public static Interface withd (int accountNum, int newBalance) {
+    public static Interface withd (int accountNum, double newBalance) {
 
         for (Interface in: inter) {
             if(in.getAccountNumber() == accountNum) {
@@ -64,7 +65,7 @@ public class Bank {
     }
 
     //used in order to find a specific account using the account number.
-    public static int find(int accountNum) {
+    public static double find(int accountNum) {
 
         for(Interface in: inter) {
             if(in.getAccountNumber() == accountNum) return in.getBalance();
@@ -78,5 +79,4 @@ public class Bank {
     public static String getAll() {
         return inter.toString();
     }
-
 }
