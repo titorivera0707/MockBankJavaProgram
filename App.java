@@ -1,6 +1,8 @@
 //Pedro Nunez pnunez14@toromail.csudh.edu
 //Tito Rivera trivera26@toromail.csudh.edu
 
+
+//Pedro and Tito's project
 import java.util.*;
 import java.io.*;
 
@@ -14,6 +16,8 @@ public class App {
         //accept menu method
         int userSelect;
         do{
+         Person person = new Person(null, null, null, null, null);
+         Account newAccount = new Account(0.0, "Open");
         
             //accessing the menu in this switch statement
 
@@ -36,9 +40,6 @@ public class App {
 
                //Prompts user to input information in order to open a new account.
                case 1:
-
-               Person person = new Person(null, null, null, null, null);
-               Account newAccount = new Account(0.0, null);
                
                Interface in = Bank.bankInterface(person, newAccount);
 
@@ -68,8 +69,6 @@ public class App {
                
                //Prompts user to input an account number and add how much money they would like to deposit.
                case 3:
-
-               Account newAccounttt = new Account(0.0, "Open");
                System.out.print("\nEnter account number: ");
                int searchString = keyboard.nextInt();
 
@@ -78,7 +77,7 @@ public class App {
                   break;
                }
 
-               if(newAccounttt.getAccountStatus().equalsIgnoreCase("Closed")) {
+               if(newAccount.getAccountStatus().equalsIgnoreCase("Closed")) {
                   System.out.println("Account closed. Only withdraw allowed. Please use another account.");
                   break;
                }
@@ -123,19 +122,17 @@ public class App {
                
                //Asks user which account they would like to close using the account number.
                case 5:
-
-               Account newAccountt = new Account(0.0, null);
                System.out.print("\nEnter account number to close: ");
                int accNumber = keyboard.nextInt();
 
-               newAccountt.setAccountStatus("Open");
+               newAccount.setAccountStatus("Open");
                if(Bank.search(accNumber) == null) {
                   System.out.println("Account not found");
                   break;
                }
-               else if(newAccountt.getAccountStatus().equalsIgnoreCase("Open"));
-               newAccountt.setAccountStatus("Closed");
-               newAccountt.setAccountStatus(Bank.search(accNumber));
+               else if(newAccount.getAccountStatus().equalsIgnoreCase("Open"));
+               newAccount.setAccountStatus("Closed");
+               newAccount.setAccountStatus(Bank.search(accNumber));
                   System.out.println("Account closed, current balance is "+Bank.find(accNumber)+". Deposits are no longer possible");
                break;
 
