@@ -1,3 +1,6 @@
+//Pedro Nunez pnunez14@toromail.csudh.edu
+//Tito Rivera trivera26@toromail.csudh.edu
+
 public class Interface {
       
        //Creating variables for the classes that have been created.

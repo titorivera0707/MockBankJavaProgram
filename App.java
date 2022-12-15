@@ -1,5 +1,6 @@
+//Pedro Nunez pnunez14@toromail.csudh.edu
+//Tito Rivera trivera26@toromail.csudh.edu
 
-//Pedro and Tito's project
 import java.util.*;
 import java.io.*;
 

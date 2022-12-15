@@ -1,3 +1,6 @@
+//Pedro Nunez pnunez14@toromail.csudh.edu
+//Tito Rivera trivera26@toromail.csudh.edu
+
 public class Account {
     
     private String accountStatus;

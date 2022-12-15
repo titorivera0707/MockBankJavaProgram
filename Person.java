@@ -1,3 +1,6 @@
+//Pedro Nunez pnunez14@toromail.csudh.edu
+//Tito Rivera trivera26@toromail.csudh.edu
+
 public class Person {
 
      //Declaring all variables as private for this class only.
