@@ -9,13 +9,13 @@ public class App {
 
         Scanner keyboard = new Scanner(System.in);
 
+        Person person = new Person(null, null, null, null, null);
+        Account newAccount = new Account(0.0, null);
+
         //accept menu method
         int userSelect;
         do{
             //accessing the menu in this switch statement
-
-            Person person = new Person(null, null, null, null, null);
-            Account newAccount = new Account(0.0, null);
 
             Scanner input = new Scanner(System.in);
 
@@ -71,7 +71,7 @@ public class App {
                }
 
                if(newAccount.getAccountStatus().equalsIgnoreCase("Closed")) {
-                  System.out.println("Account closed. Please use another account.");
+                  System.out.println("Account closed. Only withdraw allowed. Please use another account.");
                   break;
                }
 
