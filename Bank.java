@@ -21,6 +21,7 @@ public class Bank {
 
     }
 
+    //Adds money into the Balance variable using the account number.
     public static Interface depos (int accountNum, double newBalance) {
 
         for (Interface in: inter) {
@@ -35,6 +36,7 @@ public class Bank {
 
     }
 
+    //Takes away money from the Balance variable.
     public static Interface withd (int accountNum, double newBalance) {
 
         for (Interface in: inter) {
@@ -56,6 +58,7 @@ public class Bank {
         }
     }
 
+    //If account number matches an account number in ArrayList will return "Closed".
     public static String search(int accountNum) {
 
         for(Interface r: inter) {
@@ -67,7 +70,7 @@ public class Bank {
 
     }
 
-    //used in order to find a specific account using the account number.
+    //used in order to get the exact balance in a certain account. 
     public static double find(int accountNum) {
 
         for(Interface in: inter) {

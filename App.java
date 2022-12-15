@@ -34,6 +34,8 @@ public class App {
 
             //each case is equlivent to each number choice in the menu
             switch(userSelect) {
+
+               //Prompts user to input information in order to open a new account.
                case 1:
                Interface in = Bank.bankInterface(person, newAccount);
 
@@ -54,13 +56,14 @@ public class App {
                System.out.println("Thank you, the account number is: " +in.getAccountNumber()+".\n");
                break;
                
+               //Prints the entire contents of our ArrayList.
                case 2:
                Bank.list();
                System.out.println("\n");
                break;
                
+               //Prompts user to input an account number and add how much money they would like to deposit.
                case 3:
-               
                System.out.print("\nEnter account number: ");
                int searchString = keyboard.nextInt();
 
@@ -74,7 +77,6 @@ public class App {
                   break;
                }
 
-
                System.out.print("Enter the amount to deposit: ");
                double newDep = keyboard.nextDouble();
                Bank.depos(searchString, newDep);
@@ -83,9 +85,8 @@ public class App {
                
                break;
                
-
+               //Promots user to enter an account number then enter how much they would like to withdraw.
                case 4:
-
                System.out.print("\nEnter account number: ");
                int accountNum = keyboard.nextInt();
 
@@ -114,6 +115,7 @@ public class App {
                }
                break;
                
+               //Asks user which account they would like to close using the account number.
                case 5:
                System.out.print("\nEnter account number to close: ");
                int accNumber = keyboard.nextInt();
@@ -125,10 +127,11 @@ public class App {
                else if(newAccount.getAccountStatus().equalsIgnoreCase("Closed")) System.out.println("Account already closed.");
                else {
                   newAccount.setAccountStatus(Bank.search(accNumber));
-                  System.out.println("Account closed, current balance is "+Bank.find(accNumber)+" deposits are no longer possible");
+                  System.out.println("Account closed, current balance is "+Bank.find(accNumber)+". Deposits are no longer possible");
                }
                break;
 
+               //Stops the program
                case 6:
                System.exit(0);
                break;
