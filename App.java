@@ -79,7 +79,7 @@ public class App {
                double newDep = keyboard.nextDouble();
                Bank.depos(searchString, newDep);
                Bank.find(searchString);
-               System.out.print("Deposit successful, the new balance is: " + Bank.find(searchString) + "\n");
+               System.out.print("Deposit successful, the new balance is: $" + Bank.find(searchString) + "\n");
                
                break;
                
