@@ -1,7 +1,3 @@
-//Pedro Nunez pnunez14@toromail.csudh.edu
-//Tito Rivera trivera26@toromail.csudh.edu
-
-
 //Pedro and Tito's project
 import java.util.*;
 import java.io.*;
@@ -18,6 +14,7 @@ public class App {
         do{
          Person person = new Person(null, null, null, null, null);
          Account newAccount = new Account(0.0, "Open");
+
         
             //accessing the menu in this switch statement
 
