@@ -9,6 +9,7 @@ public class Interface {
  private Person accHolder;
  private Account bankAccount;
  private double balance;
+ private String accountStat;
 
  public Interface(Person accHolder, Account bankAccount){
 
@@ -17,10 +18,17 @@ public class Interface {
      this.accountNumber = accountCounter++;
      this.accHolder = accHolder;
      this.bankAccount = bankAccount;
+     this.accountStat = accountStat;
 
  }
 
  //Setting getters and setters.
+ public String getAccountStatus() {
+    return accountStat;
+}
+public void setAccountStatus(String accountStat) {
+    this.accountStat = accountStat;
+}
  public double getBalance() {
      return balance;
  }
@@ -55,7 +63,7 @@ public class Interface {
  //Creates a string to call whenever full account information is requested.
  public String toString() {
 
-     return +getAccountNumber() + "" + accHolder.toString() + " : " + getBalance() + " : Account - " + bankAccount.getAccountStatus().toString()+" "; 
+     return +getAccountNumber() + "" + accHolder.toString() + " : " + getBalance() + " : Account - " + getAccountStatus().toString()+" "; 
      
 
  }

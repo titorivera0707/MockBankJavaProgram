@@ -1,5 +1,8 @@
 //Pedro and Tito's project
 import java.util.*;
+
+import javax.accessibility.AccessibleBundle;
+
 import java.io.*;
 
 public class App {
@@ -13,7 +16,7 @@ public class App {
         int userSelect;
         do{
          Person person = new Person(null, null, null, null, null);
-         Account newAccount = new Account(0.0, "Open");
+         Account newAccount = new Account(0.0, null);
 
         
             //accessing the menu in this switch statement
@@ -51,11 +54,10 @@ public class App {
 
                System.out.print("Account Name: ");
                person.setAccountName(keyboard.nextLine());
-
-               newAccount.setAccountStatus("Open");
                
 
                System.out.println("Thank you, the account number is: " +in.getAccountNumber()+".\n");
+               Bank.setStat(in.getAccountNumber(), "Open");
                break;
                
                //Prints the entire contents of our ArrayList.
@@ -74,7 +76,7 @@ public class App {
                   break;
                }
 
-               if(newAccount.getAccountStatus().equalsIgnoreCase("Closed")) {
+               if(Bank.getStat(searchString).equalsIgnoreCase("Closed")) {
                   System.out.println("Account closed. Only withdraw allowed. Please use another account.");
                   break;
                }
@@ -122,15 +124,16 @@ public class App {
                System.out.print("\nEnter account number to close: ");
                int accNumber = keyboard.nextInt();
 
-               newAccount.setAccountStatus("Open");
                if(Bank.search(accNumber) == null) {
                   System.out.println("Account not found");
                   break;
                }
-               else if(newAccount.getAccountStatus().equalsIgnoreCase("Open"));
-               newAccount.setAccountStatus("Closed");
-               newAccount.setAccountStatus(Bank.search(accNumber));
+               else if(Bank.getStat(accNumber).equalsIgnoreCase("Closed"));
+               else{
+                  Bank.setStat(accNumber, "Closed");
                   System.out.println("Account closed, current balance is "+Bank.find(accNumber)+". Deposits are no longer possible");
+               }
+
                break;
 
                //Stops the program

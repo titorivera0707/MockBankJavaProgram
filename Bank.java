@@ -8,7 +8,6 @@ public class Bank {
      
 
     //Creating an ArrayList in order to be able to display all bank accounts.
-    Account newAcc = new Account(0.0, null);
     private static ArrayList<Interface> inter = new ArrayList<Interface>(); 
 
     //Used in order to add new items into the ArrayList every time something is pushed.
@@ -18,6 +17,34 @@ public class Bank {
         inter.add(in);
 
         return in;
+
+    }
+
+    public static Interface setStat (int accountNum, String newS) {
+
+        for (Interface in: inter) {
+            if(in.getAccountNumber() == accountNum) {
+
+                in.setAccountStatus(newS);;
+
+            }
+        }
+
+        return null;
+
+    }
+
+    public static String getStat (int accountNum) {
+
+        for (Interface in: inter) {
+            if(in.getAccountNumber() == accountNum) {
+
+                return in.getAccountStatus();
+
+            }
+        }
+
+        return null;
 
     }
 
