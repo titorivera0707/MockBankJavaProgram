@@ -54,7 +54,7 @@ public class Interface {
     //Creates a string to call whenever full account information is requested.
     public String toString() {
 
-        return getAccountNumber() + " " + accHolder.toString() + " : " + getBalance() + " : Account - " + bankAccount.getAccountStatus().toString();
+        return getAccountNumber() + " " + accHolder.toString() + " : " + getBalance() + " : Account - " + bankAccount.getAccountStatus();
 
     }
 

@@ -14,6 +14,9 @@ public class App {
         do{
             //accessing the menu in this switch statement
 
+            Person person = new Person(null, null, null, null, null);
+            Account newAccount = new Account(0, null);
+
             Scanner input = new Scanner(System.in);
 
             //A list of options for the user
@@ -31,11 +34,8 @@ public class App {
             //each case is equlivent to each number choice in the menu
             switch(userSelect) {
                case 1:
-               Person person = new Person(null, null, null, null, null);
-               Account newAccount = new Account(0, "Open");
                Interface in = Bank.bankInterface(person, newAccount);
-               //Person person = new Person(null, null, null, null, null);
-               //Account newAccount = new Account(0, null);
+
                System.out.print("\nEnter first name: ");
                person.setFirstName(keyboard.nextLine());
 
@@ -64,17 +64,23 @@ public class App {
                System.out.print("\nEnter account number: ");
                int searchString = keyboard.nextInt();
 
+               if(Bank.search(searchString) == null) {
+                  System.out.println("Account not found");
+                  break;
+               }
+
+               if(newAccount.getAccountStatus().equalsIgnoreCase("Closed")) {
+                  System.out.println("Account closed. Please use another account.");
+                  break;
+               }
+
+
                System.out.print("Enter the amount to deposit: ");
                int newDep = keyboard.nextInt();
                Bank.depos(searchString, newDep);
-
-               if(Bank.find(searchString) == 0) {
-                  System.out.print("Account not found ");
-               }
-               else{
                Bank.find(searchString);
                System.out.print("Deposit successful, the new balance is: " + Bank.find(searchString) + "\n");
-               }
+               
                break;
                
 
@@ -82,6 +88,11 @@ public class App {
 
                System.out.print("\nEnter account number: ");
                int accountNum = keyboard.nextInt();
+
+               if(Bank.search(accountNum) == null) {
+                  System.out.println("Account not found");
+                  break;
+               }
 
                System.out.print("Enter the amount to withdraw: ");
                int Withdraw = keyboard.nextInt();
@@ -104,18 +115,16 @@ public class App {
                break;
                
                case 5:
-               Account newNewAccount = new Account(0, "Open");
                System.out.print("\nEnter account number to close: ");
                int accNumber = keyboard.nextInt();
 
-               String newValue = Bank.search(accNumber);
-
                if(Bank.search(accNumber) == null) {
                   System.out.println("Account not found");
+                  break;
                }
-               else if(Bank.search(accNumber) == "Closed") System.out.println("Account already closed.");
+               else if(newAccount.getAccountStatus().equalsIgnoreCase("Closed")) System.out.println("Account already closed.");
                else {
-                  newNewAccount.setAccountStatus(newValue);
+                  newAccount.setAccountStatus(Bank.search(accNumber));
                   System.out.println("Account closed, current balance is "+Bank.find(accNumber)+" deposits are no longer possible");
                }
                break;
