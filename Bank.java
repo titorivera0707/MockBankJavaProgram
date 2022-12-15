@@ -8,7 +8,7 @@ public class Bank {
      
 
     //Creating an ArrayList in order to be able to display all bank accounts.
-    Account newAcc = new Account(0.0, "Open");
+    Account newAcc = new Account(0.0, null);
     private static ArrayList<Interface> inter = new ArrayList<Interface>(); 
 
     //Used in order to add new items into the ArrayList every time something is pushed.
