@@ -1,4 +1,8 @@
-//Pedro and Tito's project
+//Pedro Nunez pnunez14@toromail.csudh.edu
+//Tito Rivera trivera26@toromail.csudh.edu
+//We opted to remove Account.java in order to simplify the program
+//and get rid of looming errors that were causing program to no run properly.
+
 import java.util.*;
 
 import javax.accessibility.AccessibleBundle;
@@ -16,8 +20,6 @@ public class App {
         int userSelect;
         do{
          Person person = new Person(null, null, null, null, null);
-         Account newAccount = new Account(0.0, null);
-
         
             //accessing the menu in this switch statement
 
@@ -41,7 +43,7 @@ public class App {
                //Prompts user to input information in order to open a new account.
                case 1:
                
-               Interface in = Bank.bankInterface(person, newAccount);
+               Interface in = Bank.bankInterface(person);
 
                System.out.print("\nEnter first name: ");
                person.setFirstName(keyboard.nextLine());

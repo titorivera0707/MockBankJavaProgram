@@ -11,15 +11,16 @@ public class Bank {
     private static ArrayList<Interface> inter = new ArrayList<Interface>(); 
 
     //Used in order to add new items into the ArrayList every time something is pushed.
-    public static Interface bankInterface(Person accHolder, Account bankAccount) {
+    public static Interface bankInterface(Person accHolder) {
 
-        Interface in = new Interface(accHolder, bankAccount);
+        Interface in = new Interface(accHolder);
         inter.add(in);
 
         return in;
 
     }
 
+    //Used to set account status of an account.
     public static Interface setStat (int accountNum, String newS) {
 
         for (Interface in: inter) {
@@ -34,6 +35,7 @@ public class Bank {
 
     }
 
+    //Used to get account status of an account.
     public static String getStat (int accountNum) {
 
         for (Interface in: inter) {
